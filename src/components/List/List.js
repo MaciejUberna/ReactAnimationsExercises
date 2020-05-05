@@ -6,13 +6,15 @@ import './List.css';
 
 class List extends Component {
     state = {
-        items: [1, 2, 3]
+        items: [1, 2, 3],
+        totalCtr: 3
     }
 
     addItemHandler = () => {
         this.setState((prevState) => {
             return {
-                items: prevState.items.concat(prevState.items.length + 1)
+                items: [prevState.totalCtr + 1].concat(prevState.items),
+                totalCtr: prevState.totalCtr + 1
             };
         });
     }
@@ -27,7 +29,7 @@ class List extends Component {
 
     render () {
         const listItems = this.state.items.map( (item, index) => (
-            <CSSTransition key={index} classNames="fade" timeout={500}>
+            <CSSTransition key={index} classNames="fade" timeout={800}>
                 <li
                     className="ListItem" 
                     onClick={() => this.removeItemHandler(index)}
