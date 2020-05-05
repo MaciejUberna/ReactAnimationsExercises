@@ -6,6 +6,13 @@ import Modal from "./components/Modal/Modal";
 import Backdrop from "./components/Backdrop/Backdrop";
 import List from "./components/List/List";
 
+// Alternatives to the package react-transition-group:
+// a. react motion :: uses phisics tho best animate values of keyframes you provide
+// b. react move :: has to components: Animate and NodeGroup you always work with objects describing the state of animation
+// With react move you can controll moch more params than in react-transition-group
+// c. react router transition :: for easy creating route transitions, it's build on react motion, gives AnimatedSwitch component that
+// repalaces router <Switch> component for router v4 or higher
+
 class App extends Component {
 
   state = {
